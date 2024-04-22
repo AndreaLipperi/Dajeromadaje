@@ -106,8 +106,13 @@
 			font-size: 7px;
 			position: absolute;
 			bottom:0;
-			left:0;
+			left:30;
 		}
+			#qrcode2{
+				position:absolute;
+				bottom:0;
+				left:0;
+			}
 		</style>
 		<script>
 			function open_altro(){
@@ -204,10 +209,12 @@
         	</div>
 			</div>
 			</div>
-	<div id="qr">			
+				
 		<div id="qrcode2">
 		</div>
-		<h2>SE VUOI APRIRE IL SITO DA UN ALTRO DISPOSITIVO, SCANNERIZZA CAPO</h2>
+		<div id="qr">
+		<h2>SE VUOI APRIRE IL SITO DA UN ALTRO DISPOSITIVO, <br> SCANNERIZZA CAPO</h2>
+		</div>
 		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     	<script>
         	var qrcode = new QRCode(document.getElementById("qrcode2"), {
@@ -216,7 +223,7 @@
             	height: 128
         	});
     	</script>
-	</div>
+	
 		
     </body>
 </html>
