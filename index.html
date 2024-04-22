@@ -106,8 +106,14 @@
 			font-size: 7px;
 			position: absolute;
 			bottom:0;
-			left:100;
+			left:0;
+			overflow: hidden;
 		}
+			 #scritta, #qrcode2 {
+        width: 50%; /* Ogni div occupa il 50% della larghezza del contenitore */
+        float: left; /* I div fluttuano a sinistra */
+        box-sizing: border-box; /* Include padding e bordi nella larghezza */
+    }
 			#qrcode2{
 				position:absolute;
 				bottom:0;
@@ -209,7 +215,7 @@
         	</div>
 			</div>
 			</div>
-				
+		<div id="qr">		
 		<div id="qrcode2">
 		</div>
 		
@@ -221,8 +227,9 @@
             	height: 128
         	});
     	</script>
-		<div id="qr">
+		<div id="scritta">
 		<h2>SE VUOI APRIRE IL SITO DA UN ALTRO DISPOSITIVO, <br> SCANNERIZZA CAPO</h2>
+		</div>
 		</div>
 	
 		
