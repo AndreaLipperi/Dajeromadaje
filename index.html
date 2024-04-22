@@ -97,8 +97,8 @@
 		h3, h2{
 			color: blue;
 		}
-		#qrcode2 {
-			margin-top: 100px;
+		#qr {
+			margin-top: 140px;
 		}
 		</style>
 		<script>
@@ -196,8 +196,10 @@
         	</div>
 			</div>
 			</div>
+	<div id="qr">			
 		<div id="qrcode2">
 		</div>
+		<h2>SE VUOI APRIRE IL SITO DA UN ALTRO DISPOSITIVO, SCANNERIZZA CAPO</h2>
 		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     	<script>
         	var qrcode = new QRCode(document.getElementById("qrcode2"), {
@@ -206,6 +208,7 @@
             	height: 128
         	});
     	</script>
+	</div>
 		
     </body>
 </html>
