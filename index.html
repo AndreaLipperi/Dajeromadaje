@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <title>Benvenuto</title>
+		<style>
+		body {
+			background-image: 
+               url('newFile.jpeg'), 
+               url('newFile2.jpeg'), 
+               url('newFile3.jpeg'); /* Sostituisci con i percorsi effettivi delle tue immagini */
+            background-repeat: no-repeat;
+            background-position: top left, center center, top right; /* Posizioni delle immagini */
+            background-size: contain, contain, contain; /* Dimensioni delle immagini */
+            margin: 0; /* Rimuove il margine predefinito */
+        }
+		#popup_mdn{
+			background-image:
+				url('maden.jpeg');
+			background-size:contain;
+			background-size: 100px 50px;
+		}
+		#popup_altro {
+			background-image:
+				url('niente.jpeg');
+			background-repeat:no-repeat;
+			background-size:contain;
+			background-position:center;
+		}
+		#niente {
+    		top: 35%;
+   			left: 50%;
+			background-color: rgba(0, 0, 0, -10); /* Colore di sfondo con opacità */
+    		border-radius: 8px;
+    		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+		}
+		#tutto {
+			padding: 30px; /* Spazio interno */
+            border-radius: 8px; /* Bordo arrotondato */
+		}
+		text:hover {
+			font-size:33;
+		}
+		button:hover {
+			padding: 10px 20px;
+    		font-size: 15px;
+		}
+		#sottotesto {
+			display: none; /* Inizialmente nascosto */
+			width:150;
+			background-color:lightgrey;
+            margin-top: 20px;
+            transition: display 0.3s ease; /
+		}
+		#storie:hover + #sottotesto {
+            display: block; /* Mostrato al passaggio del mouse sul button */
+        }
+
+        /* Per nascondere di nuovo il div quando si esce dal button */
+        #storie + #sottotesto:hover {
+            display: none;
+        }
+		.popup {
+    		display: none;
+    		position: fixed;
+   			top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 100%;
+    		background-color: rgba(0, 0, 0, 0.7);
+    		z-index: 1000;
+		}		
+
+		.popup-content {
+    		position: absolute;
+    		top: 50%;
+   			left: 50%;
+    		transform: translate(-50%, -50%);
+    		background-color: #ffffff;
+    		padding: 20px;
+    		border-radius: 8px;
+    		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		}
+
+		.close-btn {
+    		position: absolute;
+    		top: 10px;
+   			right: 10px;
+    		cursor: pointer;
+		}
+		
+		#dez{
+			text-decoration: none;
+		}
+		a:link, a:visited, a:hover, a:active {
+            color: blue;  /* Sostituisci con il colore desiderato */
+        }
+		h3, h2{
+			color: blue;
+		}
+		
+		</style>
+		<script>
+			function open_altro(){
+				document.getElementById('popup_altro').style.display = 'block';
+			}
+			function closePopup_altro() {
+            	document.getElementById('popup_altro').style.display = 'none';
+        	}
+
+        	// Chiudi il popup anche cliccando fuori dall'area del popup
+        	window.addEventListener('click', function(event) {
+            	if (event.target === document.getElementById('popup_altro')) {
+                	document.getElementById('popup_altro').style.display = 'none';
+            	}
+        	});
+			function open_maden(){
+				document.getElementById('popup_mdn').style.display = 'block';
+			}
+			function closePopupMdn() {
+            	document.getElementById('popup_mdn').style.display = 'none';
+        	}
+
+        	// Chiudi il popup anche cliccando fuori dall'area del popup
+        	window.addEventListener('click', function(event) {
+            	if (event.target === document.getElementById('popupMdn')) {
+                	document.getElementById('popupMdn').style.display = 'none';
+            	}
+        	});
+			
+			let colori = ["red", "blue", "green", "yellow"]; // Array di colori
+			let indiceColore = 0; // Indice per tenere traccia del colore corrente
+			let indiceBackColore = 1; // Indice per tenere traccia del colore corrente
+
+			// Funzione per cambiare il colore del testo
+			function cambiaColoreTesto() {
+    			// Ottieni l'elemento del testo dal DOM
+    			let testo = document.getElementById("titolo");
+    			let testo2 = document.getElementById("sottotitolo");
+    
+    			// Imposta il colore del testo
+    			testo.style.color = colori[indiceColore];
+				testo.style.backgroundColor= colori[indiceBackColore];
+    			testo2.style.color = colori[indiceColore];
+				testo2.style.backgroundColor= colori[indiceBackColore];
+    
+    			// Aumenta l'indice del colore (torna a 0 se raggiunge la fine dell'array)
+    			indiceColore = Math.floor(Math.random() * colori.length);
+				do {
+    				indiceBackColore = Math.floor(Math.random() * colori.length);
+				} while (indiceBackColore === indiceColore);
+			}
+
+			// Esegui la funzione cambiaColoreTesto ogni 1 secondo
+			let intervallo = setInterval(cambiaColoreTesto, 300);
+
+		</script>
+    </head>
+    <body>
+        <div align="center" id="tutto">
+			<h1 id="titolo">
+				IL CULTO DI MAU 
+			</h1>
+			<h2 id="sottotitolo">COSA VUOI SEGUIRE NEL DETTAGLIO</h2>
+			<button type="button"><a href="dezooming.html" id="dez"><h3>DEZOOMING</h3></a></button>
+			<button type="button" id="storie"><h3>STORIE STRANE NON DI MAU</h3></button>
+			<div id="sottotesto">
+				OVVIMENTE NON DI MAU, CHE LUI HA PAURISSIMA A RACCONTARLE
+			</div>
+			<button type="button" onclick="open_maden()"><h3>MADEN</h3></button>
+			<button type="button" onclick="open_altro()"><h3>ALTRO<h3></button>
+			<div id="popup_mdn" class="popup">
+       		 <div class="popup-content">
+        	    <span class="close-btn" onclick="closePopupMdn()">&times;</span>
+				<a href="https://open.spotify.com/artist/5qSd0N6BKo9Sy6aAp5jcJg">
+					<h2>PIGIA E VATTELI A SENTIRE VA</h2>
+					<p> link per vibrazioni dezoommanti</p>
+				</a>
+				<div id="qrcode">
+				</div>
+				<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+				<script>
+    				var qrcode = new QRCode(document.getElementById("qrcode"), {
+        				text: "https://open.spotify.com/artist/5qSd0N6BKo9Sy6aAp5jcJg",
+        				width: 128,
+        				height: 128
+   					});
+				</script>
+            	</div>
+			</div>
+			<div id="popup_altro" class="popup">
+       		 <div class="popup-content" id="niente">
+        	    <span class="close-btn" onclick="closePopup_altro()">&times;</span>
+            	<h2>NIENTE.</h2>
+        	</div>
+			</div>
+			</div>
+		<div id="qrcode2">
+		</div>
+		<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    	<script>
+        	var qrcode = new QRCode(document.getElementById("qrcode2"), {
+        		text: window.location.href, // URL corrente della pagina
+        		width: 128,
+            	height: 128
+        	});
+    	</script>
+		
+    </body>
+</html>

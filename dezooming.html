@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>TOCCA DEZOOMMA'</title>
+		<style>		
+		body{
+			background-image: 
+               url('dezoomma.jpeg');
+            background-repeat: repeat;
+            background-position: center center; /* Posizioni delle immagini */
+            background-size: contain; /* Dimensioni delle immagini */
+            margin: 0; /* Rimuove il margine predefinito */
+		}
+		#tutto {
+			padding: 150px; /* Spazio interno */
+            border-radius: 8px; /* Bordo arrotondato */
+		}
+		
+		a:link, a:visited, a:hover, a:active {
+            color: blue;  /* Sostituisci con il colore desiderato */
+			text-decoration: none;
+			
+        }
+		
+		</style>
+		<script>
+			let colori = ["red", "blue", "green", "yellow"]; // Array di colori
+			let indiceColore = 0; // Indice per tenere traccia del colore corrente
+			let indiceBackColore = 1; // Indice per tenere traccia del colore corrente
+
+			// Funzione per cambiare il colore del testo
+			function cambiaColoreTesto() {
+    			// Ottieni l'elemento del testo dal DOM
+    			let testo = document.getElementById("titolo");
+    
+    			// Imposta il colore del testo
+    			testo.style.color = colori[indiceColore];
+				testo.style.backgroundColor= colori[indiceBackColore];
+    
+    			// Aumenta l'indice del colore (torna a 0 se raggiunge la fine dell'array)
+    			indiceColore = Math.floor(Math.random() * colori.length);
+				do {
+    				indiceBackColore = Math.floor(Math.random() * colori.length);
+				} while (indiceBackColore === indiceColore);
+			}
+
+			// Esegui la funzione cambiaColoreTesto ogni 1 secondo
+			let intervallo = setInterval(cambiaColoreTesto, 300);
+		</script>
+	</head>
+	<body>
+		<div align="center" id="tutto">
+			<h1 id="titolo">
+				DEZOOMMA CAPO
+			</h1>
+		</div>
+		<button type="button" style="width:100px;">
+			<a href="index.html" style="display: inline-block; width: 100%; text-align: center; font-size: 16px;">
+				<b>INDIETRO</b>
+			</a>
+		</button>	
+	</body>
+</html>
