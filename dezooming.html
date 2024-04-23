@@ -5,11 +5,23 @@
 		body{
 			background-image: 
                url('dezoomma.jpeg');
-            background-repeat: repeat;
+            background-repeat: repeat; 
             background-position: center center; /* Posizioni delle immagini */
-            background-size: contain; /* Dimensioni delle immagini */
+             /* Dimensioni delle immagini */
             margin: 0; /* Rimuove il margine predefinito */
 		}
+			@media (max-width: 768px) {
+    body {
+        background-size: cover; /* Adatta l'immagine di sfondo con taglio per coprire l'intero body */
+    }
+}
+
+/* Stili per dispositivi con larghezza maggiore di 768px (desktop) */
+@media (min-width: 769px) {
+    body {
+        background-size: contain; /* Adatta l'immagine di sfondo per adattarsi all'interno del body */
+    }
+}
 		#tutto {
 			padding: 150px; /* Spazio interno */
             border-radius: 8px; /* Bordo arrotondato */
