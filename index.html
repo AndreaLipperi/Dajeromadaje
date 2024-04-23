@@ -14,10 +14,22 @@
                url('newFile3.jpeg'); /* Sostituisci con i percorsi effettivi delle tue immagini */
             background-repeat: no-repeat;
             background-position: top left, center center, top right; /* Posizioni delle immagini */
-            background-size: 33%,34%, 33%; /* Dimensioni delle immagini */
+             /* Dimensioni delle immagini */
 		background-color:black;
             margin: 0; /* Rimuove il margine predefinito */
         }
+			@media (max-width: 768px) {
+    body {
+        background-size: cover; /* Adatta l'immagine di sfondo con taglio per coprire l'intero body */
+    }
+}
+
+/* Stili per dispositivi con larghezza maggiore di 768px (desktop) */
+@media (min-width: 769px) {
+    body {
+        background-size: contain; /* Adatta l'immagine di sfondo per adattarsi all'interno del body */
+    }
+}
 		#popup_mdn{
 			background-image:
 				url('maden.jpeg');
